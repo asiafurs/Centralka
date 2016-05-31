@@ -11,6 +11,7 @@ public:
 	bool set_name(string nazwa);
 	bool add_sensor();
 	bool delete_sensor();
+	bool edit_sensor();
 	int is_active();
 	int show_id();
 	string show_name();
