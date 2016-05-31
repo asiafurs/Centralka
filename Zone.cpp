@@ -39,6 +39,33 @@ bool Zone::delete_Object()
 
 	return false;
 }
+bool Zone::edit_Object()
+{
+    if (objects.size() > 0)
+    {
+        cout << "Ktory obiekt edytowac?" << endl;
+        for (size_t i = 0; i < objects.size(); i++)
+        {
+            cout << i << ". Nazwa: " << objects.at(i).show_name() << " ID:  " << objects.at(i).show_id() << endl;
+        }
+        int temp;
+        cin >> temp;
+        if (temp >= objects.size() || temp < 0)
+        {
+            cout << "Bledny wybor!" << endl;
+            return false;
+        }
+        else
+        {
+            string name;
+            cout << "Edytuj Strefe:" << objects.at(temp).name<< endl;
+            cout << "Podaj nazwe:" << endl;
+            cin >> objects.at(temp).name;
+            return true;
+
+        }
+    }
+}
 
 int* Zone::is_active()
 {
