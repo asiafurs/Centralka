@@ -39,6 +39,33 @@ bool Object::delete_sensor()
 
 	return false;
 }
+bool Object:: edit_sensor()
+{
+    if (sensors.size() > 0)
+    {
+        cout << "Ktora strefe edytowac?" << endl;
+        for (size_t i = 0; i < sensors.size(); i++)
+        {
+            cout << i << ". Nazwa: " << sensors.at(i).show_name() << " ID:  " << sensors.at(i).show_id() << endl;
+        }
+        int temp;
+        cin >> temp;
+        if (temp >= sensors.size() || temp < 0)
+        {
+            cout << "Bledny wybor!" << endl;
+            return false;
+        }
+        else
+        {
+            string name;
+            cout << "Edytuj czujnik:" << sensors.at(temp).name<< endl;
+            cout << "Podaj nazwe:" << endl;
+            cin >> sensors.at(temp).name;
+            return true;
+
+        }
+    }
+}
 
 int Object::is_active()
 {
