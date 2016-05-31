@@ -8,6 +8,7 @@ public:
 	bool set_name(string nazwa);
 	bool add_Object();
 	bool delete_Object();
+	bool edit_Object();
 	int* is_active();
 	int show_id();
 	string show_name();
